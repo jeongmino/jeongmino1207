@@ -3,92 +3,63 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_base.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: junoh <junoh@student.42seoul.>             +#+  +:+       +#+        */
+/*   By: junoh <junoh@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/19 13:33:07 by junoh             #+#    #+#             */
-/*   Updated: 2021/10/21 21:34:38 by junoh            ###   ########.fr       */
+/*   Created: 2021/10/24 20:53:33 by junoh             #+#    #+#             */
+/*   Updated: 2021/10/24 21:14:20 by junoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int	ft_check_two(char *str)
+void	ft_putchar(char c)
 {
-	int	len;
-	int	index;
-	int	sub;
-
-	len = 0;
-	index = 0;
-	while (str[len])
-		len++;
-	while (str[index])
-	{
-		sub = index + 1;
-		while (str[sub])
-		{
-			if (str[index] == str[sub])
-				return (0);
-			sub++;
-		}
-		index++;
-	}
-	return (len);
+	write(1, &c, 1);
 }
 
-int	ft_check_one(char *str)
+void	ft_change(unsigned int nbr, char *base, unsigned int n)
 {
-	int	size;
-	int	i;
+	int	last;
 
-	i = 0;
-	size = ft_check_two(str);
-	if (size <= 1)
-		return (0);
-	while (str[i])
-	{
-		if (str[i] == '-' || str[i] == '+')
-			return (0);
-		i++;
-	}
-	return (size);
+	if (nbr == 0)
+		return ;
+	last = nbr % n;
+	ft_change(nbr / n, base, n);
+	ft_putchar(base[last]);
 }
 
-void	ft_base_cal(int nbr, char *str, int size)
+int	ft_check(char *base)
 {
 	int		n;
-	char	c;
+	char	*tmp;
 
-	n = nbr;
-	if (n >= size)
-		ft_base_cal(n / size, str, size);
-	c = str[n % size];
-	write(1, &c, 1);
+	n = 0;
+	while (base[n])
+	{
+		if (base[n] == '+' || base[n] == '-')
+			return (0);
+		tmp = &base[n];
+		while (*tmp++)
+			if (*tmp == base[n])
+				return (0);
+		n++;
+	}
+	return (n);
 }
 
 void	ft_putnbr_base(int nbr, char *base)
 {
-	int	size;
-
-	size = ft_check_one(base);
-	if (!(size))
-		return ;
-	if (nbr == -2147483648)
+	if (ft_check(base) > 1)
 	{
-		write(1, "-", 1);
-		write(1, &base[2], 1);
-		nbr = 147483648;
+		if (nbr > 0)
+			ft_change(nbr, base, ft_check(base));
+		else if (nbr == 0)
+			ft_putchar(base[0]);
+		else
+		{
+			ft_putchar('-');
+			nbr = nbr * -1;
+			ft_change(nbr, base, ft_check(base));
+		}
 	}
-	if (nbr == 0)
-	{
-		write(1, &base[0], 1);
-		return ;
-	}
-	if (nbr < 0)
-	{
-		nbr = nbr * -1;
-		write(1, "-", 1);
-	}
-	ft_base_cal(nbr, base, size);
-	return ;
 }

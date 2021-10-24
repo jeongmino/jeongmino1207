@@ -6,9 +6,11 @@
 /*   By: junoh <junoh@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 21:29:34 by junoh             #+#    #+#             */
-/*   Updated: 2021/10/21 21:30:28 by junoh            ###   ########.fr       */
+/*   Updated: 2021/10/24 21:24:06 by junoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <unistd.h>
 
 void	ft_putstr(char *str)
 {
@@ -17,7 +19,7 @@ void	ft_putstr(char *str)
 	i = 0;
 	while (str[i])
 	{
-		write(1, str[i], 1);
+		write(1, &str[i], 1);
 		i++;
 	}
 }
