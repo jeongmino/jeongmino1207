@@ -1,0 +1,955 @@
+= Host-specific information ====================================================
+$> hostname; uname -msr
+c6r1s3.42seoul.kr
+Darwin 19.6.0 x86_64
+$> date
+Thu Nov 25 16:15:00 KST 2021
+$> gcc --version
+Apple clang version 12.0.0 (clang-1200.0.32.28)
+Target: x86_64-apple-darwin19.6.0
+Thread model: posix
+InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+$> clang --version
+Apple clang version 12.0.0 (clang-1200.0.32.28)
+Target: x86_64-apple-darwin19.6.0
+Thread model: posix
+InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+
+= libft.h=======================================================================
+$> norminette libft.h | grep -E '(Error|Warning)'
+/Users/junoh/Desktop/libft/intra-uuid-e4131d17-ad46-4ae5-a522-4ef6a54ca3de-3873067/Libftest/tmp_tests_dir/libft.h: Error!
+Error: MISALIGNED_FUNC_DECL (line:   9, col:   9):	Misaligned function declaration
+Error: MISALIGNED_FUNC_DECL (line:  25, col:  10):	Misaligned function declaration
+Error: MISALIGNED_FUNC_DECL (line:  29, col:  10):	Misaligned function declaration
+Error: MISALIGNED_FUNC_DECL (line:  31, col:  10):	Misaligned function declaration
+Error: MISALIGNED_FUNC_DECL (line:  33, col:  10):	Misaligned function declaration
+Error: MISALIGNED_FUNC_DECL (line:  35, col:  10):	Misaligned function declaration
+Error: MISALIGNED_FUNC_DECL (line:  37, col:   9):	Misaligned function declaration
+Error: MISALIGNED_FUNC_DECL (line:  39, col:   9):	Misaligned function declaration
+Error: MISALIGNED_FUNC_DECL (line:  45, col:  10):	Misaligned function declaration
+Error: MISALIGNED_FUNC_DECL (line:  47, col:  10):	Misaligned function declaration
+Error: MISALIGNED_FUNC_DECL (line:  49, col:  10):	Misaligned function declaration
+Error: MISALIGNED_FUNC_DECL (line:  51, col:  10):	Misaligned function declaration
+Norme check failed
+
+= Compiling libft ==============================================================
+$> make re
+rm -f ./srcs/ft_atoi.o ./srcs/ft_bzero.o ./srcs/ft_calloc.o ./srcs/ft_isalnum.o ./srcs/ft_isalpha.o ./srcs/ft_isascii.o ./srcs/ft_isdigit.o ./srcs/ft_isprint.o ./srcs/ft_memchr.o ./srcs/ft_memcmp.o ./srcs/ft_memcpy.o ./srcs/ft_memmove.o ./srcs/ft_memset.o ./srcs/ft_strchr.o ./srcs/ft_strdup.o ./srcs/ft_strlcat.o ./srcs/ft_strlcpy.o ./srcs/ft_strlen.o ./srcs/ft_strncmp.o ./srcs/ft_strnstr.o ./srcs/ft_strrchr.o ./srcs/ft_tolower.o ./srcs/ft_toupper.o
+rm -f libft.a
+gcc -Wall -Wextra -Werror -c srcs/ft_atoi.c -o srcs/ft_atoi.o -I includes/
+gcc -Wall -Wextra -Werror -c srcs/ft_bzero.c -o srcs/ft_bzero.o -I includes/
+gcc -Wall -Wextra -Werror -c srcs/ft_calloc.c -o srcs/ft_calloc.o -I includes/
+gcc -Wall -Wextra -Werror -c srcs/ft_isalnum.c -o srcs/ft_isalnum.o -I includes/
+gcc -Wall -Wextra -Werror -c srcs/ft_isalpha.c -o srcs/ft_isalpha.o -I includes/
+gcc -Wall -Wextra -Werror -c srcs/ft_isascii.c -o srcs/ft_isascii.o -I includes/
+gcc -Wall -Wextra -Werror -c srcs/ft_isdigit.c -o srcs/ft_isdigit.o -I includes/
+gcc -Wall -Wextra -Werror -c srcs/ft_isprint.c -o srcs/ft_isprint.o -I includes/
+gcc -Wall -Wextra -Werror -c srcs/ft_memchr.c -o srcs/ft_memchr.o -I includes/
+gcc -Wall -Wextra -Werror -c srcs/ft_memcmp.c -o srcs/ft_memcmp.o -I includes/
+gcc -Wall -Wextra -Werror -c srcs/ft_memcpy.c -o srcs/ft_memcpy.o -I includes/
+gcc -Wall -Wextra -Werror -c srcs/ft_memmove.c -o srcs/ft_memmove.o -I includes/
+gcc -Wall -Wextra -Werror -c srcs/ft_memset.c -o srcs/ft_memset.o -I includes/
+gcc -Wall -Wextra -Werror -c srcs/ft_strchr.c -o srcs/ft_strchr.o -I includes/
+gcc -Wall -Wextra -Werror -c srcs/ft_strdup.c -o srcs/ft_strdup.o -I includes/
+gcc -Wall -Wextra -Werror -c srcs/ft_strlcat.c -o srcs/ft_strlcat.o -I includes/
+gcc -Wall -Wextra -Werror -c srcs/ft_strlcpy.c -o srcs/ft_strlcpy.o -I includes/
+gcc -Wall -Wextra -Werror -c srcs/ft_strlen.c -o srcs/ft_strlen.o -I includes/
+gcc -Wall -Wextra -Werror -c srcs/ft_strncmp.c -o srcs/ft_strncmp.o -I includes/
+gcc -Wall -Wextra -Werror -c srcs/ft_strnstr.c -o srcs/ft_strnstr.o -I includes/
+gcc -Wall -Wextra -Werror -c srcs/ft_strrchr.c -o srcs/ft_strrchr.o -I includes/
+gcc -Wall -Wextra -Werror -c srcs/ft_tolower.c -o srcs/ft_tolower.o -I includes/
+gcc -Wall -Wextra -Werror -c srcs/ft_toupper.c -o srcs/ft_toupper.o -I includes/
+ar -rc libft.a ./srcs/ft_atoi.o ./srcs/ft_bzero.o ./srcs/ft_calloc.o ./srcs/ft_isalnum.o ./srcs/ft_isalpha.o ./srcs/ft_isascii.o ./srcs/ft_isdigit.o ./srcs/ft_isprint.o ./srcs/ft_memchr.o ./srcs/ft_memcmp.o ./srcs/ft_memcpy.o ./srcs/ft_memmove.o ./srcs/ft_memset.o ./srcs/ft_strchr.o ./srcs/ft_strdup.o ./srcs/ft_strlcat.o ./srcs/ft_strlcpy.o ./srcs/ft_strlen.o ./srcs/ft_strncmp.o ./srcs/ft_strnstr.o ./srcs/ft_strrchr.o ./srcs/ft_tolower.o ./srcs/ft_toupper.o
+
+$> ls -la libft.a
+-rw-r--r--  1 junoh  2021_seoul  19704 Nov 25 16:15 /Users/junoh/Desktop/libft/intra-uuid-e4131d17-ad46-4ae5-a522-4ef6a54ca3de-3873067/Libftest/tmp_tests_dir/libft.a
+
+= Part1_functions ==============================================================
+
+= ft_atoi ======================================================================
+$> norminette ft_atoi.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror /Users/junoh/Desktop/libft/intra-uuid-e4131d17-ad46-4ae5-a522-4ef6a54ca3de-3873067/Libftest/tests/Part1_functions/ft_atoi/main.c -L/Users/junoh/Desktop/libft/intra-uuid-e4131d17-ad46-4ae5-a522-4ef6a54ca3de-3873067/Libftest/tmp_tests_dir -lft -I/Users/junoh/Desktop/libft/intra-uuid-e4131d17-ad46-4ae5-a522-4ef6a54ca3de-3873067/Libftest/tmp_tests_dir
+
+= Test 1 ===================================================
+$> ./user_exe 01
+$> diff -U 3 user_output_test01 test01.output
+
+Diff OK :D
+= Test 2 ===================================================
+$> ./user_exe 02
+$> diff -U 3 user_output_test02 test02.output
+
+Diff OK :D
+= Test 3 ===================================================
+$> ./user_exe 03
+$> diff -U 3 user_output_test03 test03.output
+
+Diff OK :D
+= Test 4 ===================================================
+$> ./user_exe 04
+$> diff -U 3 user_output_test04 test04.output
+
+Diff OK :D
+= Test 5 ===================================================
+$> ./user_exe 05
+$> diff -U 3 user_output_test05 test05.output
+
+Diff OK :D
+= Test 6 ===================================================
+$> ./user_exe 06
+$> diff -U 3 user_output_test06 test06.output
+
+Diff OK :D
+= Test 7 ===================================================
+$> ./user_exe 07
+$> diff -U 3 user_output_test07 test07.output
+
+Diff OK :D
+= Test 8 ===================================================
+$> ./user_exe 08
+$> diff -U 3 user_output_test08 test08.output
+
+Diff OK :D
+= Test 9 ===================================================
+$> ./user_exe 09
+$> diff -U 3 user_output_test09 test09.output
+
+Diff OK :D
+= Test 10 ==================================================
+$> ./user_exe 10
+$> diff -U 3 user_output_test10 test10.output
+
+Diff OK :D
+= Test 11 ==================================================
+$> ./user_exe 11
+$> diff -U 3 user_output_test11 test11.output
+
+Diff OK :D
+= Test 12 ==================================================
+$> ./user_exe 12
+$> diff -U 3 user_output_test12 test12.output
+
+Diff OK :D
+= Test 13 ==================================================
+$> ./user_exe 13
+$> diff -U 3 user_output_test13 test13.output
+
+Diff OK :D
+= Test 14 ==================================================
+$> ./user_exe 14
+$> diff -U 3 user_output_test14 test14.output
+
+Diff OK :D
+= Test 15 ==================================================
+$> ./user_exe 15
+$> diff -U 3 user_output_test15 test15.output
+
+Diff OK :D
+= Test 16 ==================================================
+$> ./user_exe 16
+$> diff -U 3 user_output_test16 test16.output
+
+Diff OK :D
+= Test 17 ==================================================
+$> ./user_exe 17
+$> diff -U 3 user_output_test17 test17.output
+
+Diff OK :D
+= Test 18 ==================================================
+$> ./user_exe 18
+$> diff -U 3 user_output_test18 test18.output
+
+Diff OK :D
+= Test 19 ==================================================
+$> ./user_exe 19
+$> diff -U 3 user_output_test19 test19.output
+
+Diff OK :D
+
+= ft_bzero =====================================================================
+$> norminette ft_bzero.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror /Users/junoh/Desktop/libft/intra-uuid-e4131d17-ad46-4ae5-a522-4ef6a54ca3de-3873067/Libftest/tests/Part1_functions/ft_bzero/main.c -L/Users/junoh/Desktop/libft/intra-uuid-e4131d17-ad46-4ae5-a522-4ef6a54ca3de-3873067/Libftest/tmp_tests_dir -lft -I/Users/junoh/Desktop/libft/intra-uuid-e4131d17-ad46-4ae5-a522-4ef6a54ca3de-3873067/Libftest/tmp_tests_dir
+
+= Test 1 ===================================================
+$> ./user_exe 01
+$> diff -U 3 user_output_test01 test01.output
+
+Diff OK :D
+= Test 2 ===================================================
+$> ./user_exe 02
+$> diff -U 3 user_output_test02 test02.output
+
+Diff OK :D
+
+= ft_calloc ====================================================================
+$> norminette ft_calloc.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror /Users/junoh/Desktop/libft/intra-uuid-e4131d17-ad46-4ae5-a522-4ef6a54ca3de-3873067/Libftest/tests/Part1_functions/ft_calloc/main.c -L/Users/junoh/Desktop/libft/intra-uuid-e4131d17-ad46-4ae5-a522-4ef6a54ca3de-3873067/Libftest/tmp_tests_dir -lft -I/Users/junoh/Desktop/libft/intra-uuid-e4131d17-ad46-4ae5-a522-4ef6a54ca3de-3873067/Libftest/tmp_tests_dir
+
+= Test 1 ===================================================
+$> ./user_exe 01
+$> diff -U 3 user_output_test01 test01.output
+
+Diff OK :D
+
+= ft_isalnum ===================================================================
+$> norminette ft_isalnum.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror /Users/junoh/Desktop/libft/intra-uuid-e4131d17-ad46-4ae5-a522-4ef6a54ca3de-3873067/Libftest/tests/Part1_functions/ft_isalnum/main.c -L/Users/junoh/Desktop/libft/intra-uuid-e4131d17-ad46-4ae5-a522-4ef6a54ca3de-3873067/Libftest/tmp_tests_dir -lft -I/Users/junoh/Desktop/libft/intra-uuid-e4131d17-ad46-4ae5-a522-4ef6a54ca3de-3873067/Libftest/tmp_tests_dir
+
+= Test 1 ===================================================
+$> ./user_exe 01
+$> diff -U 3 user_output_test01 test01.output
+
+Diff OK :D
+= Test 2 ===================================================
+$> ./user_exe 02
+$> diff -U 3 user_output_test02 test02.output
+
+Diff OK :D
+= Test 3 ===================================================
+$> ./user_exe 03
+$> diff -U 3 user_output_test03 test03.output
+
+Diff OK :D
+= Test 4 ===================================================
+$> ./user_exe 04
+$> diff -U 3 user_output_test04 test04.output
+
+Diff OK :D
+= Test 5 ===================================================
+$> ./user_exe 05
+$> diff -U 3 user_output_test05 test05.output
+
+Diff OK :D
+= Test 6 ===================================================
+$> ./user_exe 06
+$> diff -U 3 user_output_test06 test06.output
+
+Diff OK :D
+= Test 7 ===================================================
+$> ./user_exe 07
+$> diff -U 3 user_output_test07 test07.output
+
+Diff OK :D
+
+= ft_isalpha ===================================================================
+$> norminette ft_isalpha.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror /Users/junoh/Desktop/libft/intra-uuid-e4131d17-ad46-4ae5-a522-4ef6a54ca3de-3873067/Libftest/tests/Part1_functions/ft_isalpha/main.c -L/Users/junoh/Desktop/libft/intra-uuid-e4131d17-ad46-4ae5-a522-4ef6a54ca3de-3873067/Libftest/tmp_tests_dir -lft -I/Users/junoh/Desktop/libft/intra-uuid-e4131d17-ad46-4ae5-a522-4ef6a54ca3de-3873067/Libftest/tmp_tests_dir
+
+= Test 1 ===================================================
+$> ./user_exe 01
+$> diff -U 3 user_output_test01 test01.output
+
+Diff OK :D
+= Test 2 ===================================================
+$> ./user_exe 02
+$> diff -U 3 user_output_test02 test02.output
+
+Diff OK :D
+= Test 3 ===================================================
+$> ./user_exe 03
+$> diff -U 3 user_output_test03 test03.output
+
+Diff OK :D
+= Test 4 ===================================================
+$> ./user_exe 04
+$> diff -U 3 user_output_test04 test04.output
+
+Diff OK :D
+= Test 5 ===================================================
+$> ./user_exe 05
+$> diff -U 3 user_output_test05 test05.output
+
+Diff OK :D
+= Test 6 ===================================================
+$> ./user_exe 06
+$> diff -U 3 user_output_test06 test06.output
+
+Diff OK :D
+= Test 7 ===================================================
+$> ./user_exe 07
+$> diff -U 3 user_output_test07 test07.output
+
+Diff OK :D
+
+= ft_isascii ===================================================================
+$> norminette ft_isascii.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror /Users/junoh/Desktop/libft/intra-uuid-e4131d17-ad46-4ae5-a522-4ef6a54ca3de-3873067/Libftest/tests/Part1_functions/ft_isascii/main.c -L/Users/junoh/Desktop/libft/intra-uuid-e4131d17-ad46-4ae5-a522-4ef6a54ca3de-3873067/Libftest/tmp_tests_dir -lft -I/Users/junoh/Desktop/libft/intra-uuid-e4131d17-ad46-4ae5-a522-4ef6a54ca3de-3873067/Libftest/tmp_tests_dir
+
+= Test 1 ===================================================
+$> ./user_exe 01
+$> diff -U 3 user_output_test01 test01.output
+
+Diff OK :D
+= Test 2 ===================================================
+$> ./user_exe 02
+$> diff -U 3 user_output_test02 test02.output
+
+Diff OK :D
+= Test 3 ===================================================
+$> ./user_exe 03
+$> diff -U 3 user_output_test03 test03.output
+
+Diff OK :D
+= Test 4 ===================================================
+$> ./user_exe 04
+$> diff -U 3 user_output_test04 test04.output
+
+Diff OK :D
+= Test 5 ===================================================
+$> ./user_exe 05
+$> diff -U 3 user_output_test05 test05.output
+
+Diff OK :D
+= Test 6 ===================================================
+$> ./user_exe 06
+$> diff -U 3 user_output_test06 test06.output
+
+Diff OK :D
+= Test 7 ===================================================
+$> ./user_exe 07
+$> diff -U 3 user_output_test07 test07.output
+
+Diff OK :D
+
+= ft_isdigit ===================================================================
+$> norminette ft_isdigit.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror /Users/junoh/Desktop/libft/intra-uuid-e4131d17-ad46-4ae5-a522-4ef6a54ca3de-3873067/Libftest/tests/Part1_functions/ft_isdigit/main.c -L/Users/junoh/Desktop/libft/intra-uuid-e4131d17-ad46-4ae5-a522-4ef6a54ca3de-3873067/Libftest/tmp_tests_dir -lft -I/Users/junoh/Desktop/libft/intra-uuid-e4131d17-ad46-4ae5-a522-4ef6a54ca3de-3873067/Libftest/tmp_tests_dir
+
+= Test 1 ===================================================
+$> ./user_exe 01
+$> diff -U 3 user_output_test01 test01.output
+
+Diff OK :D
+= Test 2 ===================================================
+$> ./user_exe 02
+$> diff -U 3 user_output_test02 test02.output
+
+Diff OK :D
+= Test 3 ===================================================
+$> ./user_exe 03
+$> diff -U 3 user_output_test03 test03.output
+
+Diff OK :D
+= Test 4 ===================================================
+$> ./user_exe 04
+$> diff -U 3 user_output_test04 test04.output
+
+Diff OK :D
+= Test 5 ===================================================
+$> ./user_exe 05
+$> diff -U 3 user_output_test05 test05.output
+
+Diff OK :D
+= Test 6 ===================================================
+$> ./user_exe 06
+$> diff -U 3 user_output_test06 test06.output
+
+Diff OK :D
+= Test 7 ===================================================
+$> ./user_exe 07
+$> diff -U 3 user_output_test07 test07.output
+
+Diff OK :D
+
+= ft_isprint ===================================================================
+$> norminette ft_isprint.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror /Users/junoh/Desktop/libft/intra-uuid-e4131d17-ad46-4ae5-a522-4ef6a54ca3de-3873067/Libftest/tests/Part1_functions/ft_isprint/main.c -L/Users/junoh/Desktop/libft/intra-uuid-e4131d17-ad46-4ae5-a522-4ef6a54ca3de-3873067/Libftest/tmp_tests_dir -lft -I/Users/junoh/Desktop/libft/intra-uuid-e4131d17-ad46-4ae5-a522-4ef6a54ca3de-3873067/Libftest/tmp_tests_dir
+
+= Test 1 ===================================================
+$> ./user_exe 01
+$> diff -U 3 user_output_test01 test01.output
+
+Diff OK :D
+= Test 2 ===================================================
+$> ./user_exe 02
+$> diff -U 3 user_output_test02 test02.output
+
+Diff OK :D
+= Test 3 ===================================================
+$> ./user_exe 03
+$> diff -U 3 user_output_test03 test03.output
+
+Diff OK :D
+= Test 4 ===================================================
+$> ./user_exe 04
+$> diff -U 3 user_output_test04 test04.output
+
+Diff OK :D
+= Test 5 ===================================================
+$> ./user_exe 05
+$> diff -U 3 user_output_test05 test05.output
+
+Diff OK :D
+= Test 6 ===================================================
+$> ./user_exe 06
+$> diff -U 3 user_output_test06 test06.output
+
+Diff OK :D
+= Test 7 ===================================================
+$> ./user_exe 07
+$> diff -U 3 user_output_test07 test07.output
+
+Diff OK :D
+
+= ft_memccpy ===================================================================
+Nothing turned in
+
+= ft_memchr ====================================================================
+$> norminette ft_memchr.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror /Users/junoh/Desktop/libft/intra-uuid-e4131d17-ad46-4ae5-a522-4ef6a54ca3de-3873067/Libftest/tests/Part1_functions/ft_memchr/main.c -L/Users/junoh/Desktop/libft/intra-uuid-e4131d17-ad46-4ae5-a522-4ef6a54ca3de-3873067/Libftest/tmp_tests_dir -lft -I/Users/junoh/Desktop/libft/intra-uuid-e4131d17-ad46-4ae5-a522-4ef6a54ca3de-3873067/Libftest/tmp_tests_dir
+
+= Test 1 ===================================================
+$> ./user_exe 01
+$> diff -U 3 user_output_test01 test01.output
+
+Diff OK :D
+= Test 2 ===================================================
+$> ./user_exe 02
+$> diff -U 3 user_output_test02 test02.output
+
+Diff OK :D
+= Test 3 ===================================================
+$> ./user_exe 03
+$> diff -U 3 user_output_test03 test03.output
+
+Diff OK :D
+= Test 4 ===================================================
+$> ./user_exe 04
+$> diff -U 3 user_output_test04 test04.output
+
+Diff OK :D
+= Test 5 ===================================================
+$> ./user_exe 05
+$> diff -U 3 user_output_test05 test05.output
+
+Diff OK :D
+= Test 6 ===================================================
+$> ./user_exe 06
+$> diff -U 3 user_output_test06 test06.output
+
+Diff OK :D
+
+= ft_memcmp ====================================================================
+$> norminette ft_memcmp.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror /Users/junoh/Desktop/libft/intra-uuid-e4131d17-ad46-4ae5-a522-4ef6a54ca3de-3873067/Libftest/tests/Part1_functions/ft_memcmp/main.c -L/Users/junoh/Desktop/libft/intra-uuid-e4131d17-ad46-4ae5-a522-4ef6a54ca3de-3873067/Libftest/tmp_tests_dir -lft -I/Users/junoh/Desktop/libft/intra-uuid-e4131d17-ad46-4ae5-a522-4ef6a54ca3de-3873067/Libftest/tmp_tests_dir
+
+= Test 1 ===================================================
+$> ./user_exe 01
+$> diff -U 3 user_output_test01 test01.output
+
+Diff OK :D
+= Test 2 ===================================================
+$> ./user_exe 02
+$> diff -U 3 user_output_test02 test02.output
+
+Diff OK :D
+= Test 3 ===================================================
+$> ./user_exe 03
+$> diff -U 3 user_output_test03 test03.output
+
+Diff OK :D
+= Test 4 ===================================================
+$> ./user_exe 04
+$> diff -U 3 user_output_test04 test04.output
+
+Diff OK :D
+= Test 5 ===================================================
+$> ./user_exe 05
+$> diff -U 3 user_output_test05 test05.output
+
+Diff OK :D
+= Test 6 ===================================================
+$> ./user_exe 06
+$> diff -U 3 user_output_test06 test06.output
+
+Diff OK :D
+= Test 7 ===================================================
+$> ./user_exe 07
+$> diff -U 3 user_output_test07 test07.output
+
+Diff OK :D
+= Test 8 ===================================================
+$> ./user_exe 08
+$> diff -U 3 user_output_test08 test08.output
+
+Diff OK :D
+= Test 9 ===================================================
+$> ./user_exe 09
+$> diff -U 3 user_output_test09 test09.output
+
+Diff OK :D
+
+= ft_memcpy ====================================================================
+$> norminette ft_memcpy.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror /Users/junoh/Desktop/libft/intra-uuid-e4131d17-ad46-4ae5-a522-4ef6a54ca3de-3873067/Libftest/tests/Part1_functions/ft_memcpy/main.c -L/Users/junoh/Desktop/libft/intra-uuid-e4131d17-ad46-4ae5-a522-4ef6a54ca3de-3873067/Libftest/tmp_tests_dir -lft -I/Users/junoh/Desktop/libft/intra-uuid-e4131d17-ad46-4ae5-a522-4ef6a54ca3de-3873067/Libftest/tmp_tests_dir
+
+= Test 1 ===================================================
+$> ./user_exe 01
+$> diff -U 3 user_output_test01 test01.output
+
+Diff OK :D
+= Test 2 ===================================================
+$> ./user_exe 02
+$> diff -U 3 user_output_test02 test02.output
+
+Diff OK :D
+= Test 3 ===================================================
+$> ./user_exe 03
+$> diff -U 3 user_output_test03 test03.output
+
+Diff OK :D
+
+= ft_memmove ===================================================================
+$> norminette ft_memmove.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror /Users/junoh/Desktop/libft/intra-uuid-e4131d17-ad46-4ae5-a522-4ef6a54ca3de-3873067/Libftest/tests/Part1_functions/ft_memmove/main.c -L/Users/junoh/Desktop/libft/intra-uuid-e4131d17-ad46-4ae5-a522-4ef6a54ca3de-3873067/Libftest/tmp_tests_dir -lft -I/Users/junoh/Desktop/libft/intra-uuid-e4131d17-ad46-4ae5-a522-4ef6a54ca3de-3873067/Libftest/tmp_tests_dir
+
+= Test 1 ===================================================
+$> ./user_exe 01
+$> diff -U 3 user_output_test01 test01.output
+
+Diff OK :D
+= Test 2 ===================================================
+$> ./user_exe 02
+$> diff -U 3 user_output_test02 test02.output
+
+Diff OK :D
+= Test 3 ===================================================
+$> ./user_exe 03
+$> diff -U 3 user_output_test03 test03.output
+
+Diff OK :D
+= Test 4 ===================================================
+$> ./user_exe 04
+$> diff -U 3 user_output_test04 test04.output
+
+Diff OK :D
+= Test 5 ===================================================
+$> ./user_exe 05
+$> diff -U 3 user_output_test05 test05.output
+
+Diff OK :D
+
+= ft_memset ====================================================================
+$> norminette ft_memset.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror /Users/junoh/Desktop/libft/intra-uuid-e4131d17-ad46-4ae5-a522-4ef6a54ca3de-3873067/Libftest/tests/Part1_functions/ft_memset/main.c -L/Users/junoh/Desktop/libft/intra-uuid-e4131d17-ad46-4ae5-a522-4ef6a54ca3de-3873067/Libftest/tmp_tests_dir -lft -I/Users/junoh/Desktop/libft/intra-uuid-e4131d17-ad46-4ae5-a522-4ef6a54ca3de-3873067/Libftest/tmp_tests_dir
+
+= Test 1 ===================================================
+$> ./user_exe 01
+$> diff -U 3 user_output_test01 test01.output
+
+Diff OK :D
+= Test 2 ===================================================
+$> ./user_exe 02
+$> diff -U 3 user_output_test02 test02.output
+
+Diff OK :D
+= Test 3 ===================================================
+$> ./user_exe 03
+$> diff -U 3 user_output_test03 test03.output
+
+Diff OK :D
+= Test 4 ===================================================
+$> ./user_exe 04
+$> diff -U 3 user_output_test04 test04.output
+
+Diff OK :D
+
+= ft_strchr ====================================================================
+$> norminette ft_strchr.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror /Users/junoh/Desktop/libft/intra-uuid-e4131d17-ad46-4ae5-a522-4ef6a54ca3de-3873067/Libftest/tests/Part1_functions/ft_strchr/main.c -L/Users/junoh/Desktop/libft/intra-uuid-e4131d17-ad46-4ae5-a522-4ef6a54ca3de-3873067/Libftest/tmp_tests_dir -lft -I/Users/junoh/Desktop/libft/intra-uuid-e4131d17-ad46-4ae5-a522-4ef6a54ca3de-3873067/Libftest/tmp_tests_dir
+
+= Test 1 ===================================================
+$> ./user_exe 01
+$> diff -U 3 user_output_test01 test01.output
+
+Diff OK :D
+= Test 2 ===================================================
+$> ./user_exe 02
+$> diff -U 3 user_output_test02 test02.output
+
+Diff OK :D
+= Test 3 ===================================================
+$> ./user_exe 03
+$> diff -U 3 user_output_test03 test03.output
+
+Diff OK :D
+= Test 4 ===================================================
+$> ./user_exe 04
+$> diff -U 3 user_output_test04 test04.output
+
+Diff OK :D
+= Test 5 ===================================================
+$> ./user_exe 05
+$> diff -U 3 user_output_test05 test05.output
+
+Diff OK :D
+= Test 6 ===================================================
+$> ./user_exe 06
+$> diff -U 3 user_output_test06 test06.output
+
+Diff OK :D
+
+= ft_strdup ====================================================================
+$> norminette ft_strdup.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror /Users/junoh/Desktop/libft/intra-uuid-e4131d17-ad46-4ae5-a522-4ef6a54ca3de-3873067/Libftest/tests/Part1_functions/ft_strdup/main.c -L/Users/junoh/Desktop/libft/intra-uuid-e4131d17-ad46-4ae5-a522-4ef6a54ca3de-3873067/Libftest/tmp_tests_dir -lft -I/Users/junoh/Desktop/libft/intra-uuid-e4131d17-ad46-4ae5-a522-4ef6a54ca3de-3873067/Libftest/tmp_tests_dir
+
+= Test 1 ===================================================
+$> ./user_exe 01
+$> diff -U 3 user_output_test01 test01.output
+
+Diff OK :D
+
+= ft_strlcat ===================================================================
+$> norminette ft_strlcat.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror /Users/junoh/Desktop/libft/intra-uuid-e4131d17-ad46-4ae5-a522-4ef6a54ca3de-3873067/Libftest/tests/Part1_functions/ft_strlcat/main.c -L/Users/junoh/Desktop/libft/intra-uuid-e4131d17-ad46-4ae5-a522-4ef6a54ca3de-3873067/Libftest/tmp_tests_dir -lft -I/Users/junoh/Desktop/libft/intra-uuid-e4131d17-ad46-4ae5-a522-4ef6a54ca3de-3873067/Libftest/tmp_tests_dir
+
+= Test 1 ===================================================
+$> ./user_exe 01
+$> diff -U 3 user_output_test01 test01.output
+
+Diff OK :D
+= Test 2 ===================================================
+$> ./user_exe 02
+$> diff -U 3 user_output_test02 test02.output
+
+Diff OK :D
+= Test 3 ===================================================
+$> ./user_exe 03
+$> diff -U 3 user_output_test03 test03.output
+
+Diff OK :D
+= Test 4 ===================================================
+$> ./user_exe 04
+$> diff -U 3 user_output_test04 test04.output
+
+Diff OK :D
+= Test 5 ===================================================
+$> ./user_exe 05
+$> diff -U 3 user_output_test05 test05.output
+
+Diff OK :D
+= Test 6 ===================================================
+$> ./user_exe 06
+$> diff -U 3 user_output_test06 test06.output
+
+Diff OK :D
+= Test 7 ===================================================
+$> ./user_exe 07
+$> diff -U 3 user_output_test07 test07.output
+
+Diff OK :D
+= Test 8 ===================================================
+$> ./user_exe 08
+$> diff -U 3 user_output_test08 test08.output
+
+Diff OK :D
+= Test 9 ===================================================
+$> ./user_exe 09
+$> diff -U 3 user_output_test09 test09.output
+
+Diff OK :D
+
+= ft_strlcpy ===================================================================
+$> norminette ft_strlcpy.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror /Users/junoh/Desktop/libft/intra-uuid-e4131d17-ad46-4ae5-a522-4ef6a54ca3de-3873067/Libftest/tests/Part1_functions/ft_strlcpy/main.c -L/Users/junoh/Desktop/libft/intra-uuid-e4131d17-ad46-4ae5-a522-4ef6a54ca3de-3873067/Libftest/tmp_tests_dir -lft -I/Users/junoh/Desktop/libft/intra-uuid-e4131d17-ad46-4ae5-a522-4ef6a54ca3de-3873067/Libftest/tmp_tests_dir
+
+= Test 1 ===================================================
+$> ./user_exe 01
+$> diff -U 3 user_output_test01 test01.output
+
+Diff OK :D
+= Test 2 ===================================================
+$> ./user_exe 02
+$> diff -U 3 user_output_test02 test02.output
+
+Diff OK :D
+= Test 3 ===================================================
+$> ./user_exe 03
+$> diff -U 3 user_output_test03 test03.output
+
+Diff OK :D
+= Test 4 ===================================================
+$> ./user_exe 04
+$> diff -U 3 user_output_test04 test04.output
+
+Diff OK :D
+= Test 5 ===================================================
+$> ./user_exe 05
+$> diff -U 3 user_output_test05 test05.output
+
+Diff OK :D
+
+= ft_strlen ====================================================================
+$> norminette ft_strlen.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror /Users/junoh/Desktop/libft/intra-uuid-e4131d17-ad46-4ae5-a522-4ef6a54ca3de-3873067/Libftest/tests/Part1_functions/ft_strlen/main.c -L/Users/junoh/Desktop/libft/intra-uuid-e4131d17-ad46-4ae5-a522-4ef6a54ca3de-3873067/Libftest/tmp_tests_dir -lft -I/Users/junoh/Desktop/libft/intra-uuid-e4131d17-ad46-4ae5-a522-4ef6a54ca3de-3873067/Libftest/tmp_tests_dir
+
+= Test 1 ===================================================
+$> ./user_exe 01
+$> diff -U 3 user_output_test01 test01.output
+
+Diff OK :D
+= Test 2 ===================================================
+$> ./user_exe 02
+$> diff -U 3 user_output_test02 test02.output
+
+Diff OK :D
+= Test 3 ===================================================
+$> ./user_exe 03
+$> diff -U 3 user_output_test03 test03.output
+
+Diff OK :D
+= Test 4 ===================================================
+$> ./user_exe 04
+$> diff -U 3 user_output_test04 test04.output
+
+Diff OK :D
+= Test 5 ===================================================
+$> ./user_exe 05
+$> diff -U 3 user_output_test05 test05.output
+
+Diff OK :D
+= Test 6 ===================================================
+$> ./user_exe 06
+$> diff -U 3 user_output_test06 test06.output
+
+Diff OK :D
+
+= ft_strncmp ===================================================================
+$> norminette ft_strncmp.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror /Users/junoh/Desktop/libft/intra-uuid-e4131d17-ad46-4ae5-a522-4ef6a54ca3de-3873067/Libftest/tests/Part1_functions/ft_strncmp/main.c -L/Users/junoh/Desktop/libft/intra-uuid-e4131d17-ad46-4ae5-a522-4ef6a54ca3de-3873067/Libftest/tmp_tests_dir -lft -I/Users/junoh/Desktop/libft/intra-uuid-e4131d17-ad46-4ae5-a522-4ef6a54ca3de-3873067/Libftest/tmp_tests_dir
+
+= Test 1 ===================================================
+$> ./user_exe 01
+$> diff -U 3 user_output_test01 test01.output
+
+Diff OK :D
+= Test 2 ===================================================
+$> ./user_exe 02
+$> diff -U 3 user_output_test02 test02.output
+
+Diff OK :D
+= Test 3 ===================================================
+$> ./user_exe 03
+$> diff -U 3 user_output_test03 test03.output
+
+Diff OK :D
+= Test 4 ===================================================
+$> ./user_exe 04
+$> diff -U 3 user_output_test04 test04.output
+
+Diff OK :D
+= Test 5 ===================================================
+$> ./user_exe 05
+$> diff -U 3 user_output_test05 test05.output
+
+Diff OK :D
+= Test 6 ===================================================
+$> ./user_exe 06
+$> diff -U 3 user_output_test06 test06.output
+
+Diff OK :D
+= Test 7 ===================================================
+$> ./user_exe 07
+$> diff -U 3 user_output_test07 test07.output
+
+Diff OK :D
+= Test 8 ===================================================
+$> ./user_exe 08
+$> diff -U 3 user_output_test08 test08.output
+
+Diff OK :D
+= Test 9 ===================================================
+$> ./user_exe 09
+$> diff -U 3 user_output_test09 test09.output
+
+Diff OK :D
+= Test 10 ==================================================
+$> ./user_exe 10
+$> diff -U 3 user_output_test10 test10.output
+
+Diff OK :D
+= Test 11 ==================================================
+$> ./user_exe 11
+$> diff -U 3 user_output_test11 test11.output
+
+Diff OK :D
+
+= ft_strnstr ===================================================================
+$> norminette ft_strnstr.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror /Users/junoh/Desktop/libft/intra-uuid-e4131d17-ad46-4ae5-a522-4ef6a54ca3de-3873067/Libftest/tests/Part1_functions/ft_strnstr/main.c -L/Users/junoh/Desktop/libft/intra-uuid-e4131d17-ad46-4ae5-a522-4ef6a54ca3de-3873067/Libftest/tmp_tests_dir -lft -I/Users/junoh/Desktop/libft/intra-uuid-e4131d17-ad46-4ae5-a522-4ef6a54ca3de-3873067/Libftest/tmp_tests_dir
+
+= Test 1 ===================================================
+$> ./user_exe 01
+$> diff -U 3 user_output_test01 test01.output
+
+Diff OK :D
+= Test 2 ===================================================
+$> ./user_exe 02
+$> diff -U 3 user_output_test02 test02.output
+
+Diff OK :D
+= Test 3 ===================================================
+$> ./user_exe 03
+$> diff -U 3 user_output_test03 test03.output
+
+Diff OK :D
+= Test 4 ===================================================
+$> ./user_exe 04
+$> diff -U 3 user_output_test04 test04.output
+
+Diff OK :D
+= Test 5 ===================================================
+$> ./user_exe 05
+$> diff -U 3 user_output_test05 test05.output
+
+Diff OK :D
+= Test 6 ===================================================
+$> ./user_exe 06
+$> diff -U 3 user_output_test06 test06.output
+
+Diff OK :D
+= Test 7 ===================================================
+$> ./user_exe 07
+$> diff -U 3 user_output_test07 test07.output
+
+Diff OK :D
+= Test 8 ===================================================
+$> ./user_exe 08
+$> diff -U 3 user_output_test08 test08.output
+
+Diff OK :D
+= Test 9 ===================================================
+$> ./user_exe 09
+$> diff -U 3 user_output_test09 test09.output
+
+Diff OK :D
+= Test 10 ==================================================
+$> ./user_exe 10
+$> diff -U 3 user_output_test10 test10.output
+
+Diff OK :D
+
+= ft_strrchr ===================================================================
+$> norminette ft_strrchr.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror /Users/junoh/Desktop/libft/intra-uuid-e4131d17-ad46-4ae5-a522-4ef6a54ca3de-3873067/Libftest/tests/Part1_functions/ft_strrchr/main.c -L/Users/junoh/Desktop/libft/intra-uuid-e4131d17-ad46-4ae5-a522-4ef6a54ca3de-3873067/Libftest/tmp_tests_dir -lft -I/Users/junoh/Desktop/libft/intra-uuid-e4131d17-ad46-4ae5-a522-4ef6a54ca3de-3873067/Libftest/tmp_tests_dir
+
+= Test 1 ===================================================
+$> ./user_exe 01
+$> diff -U 3 user_output_test01 test01.output
+
+Diff OK :D
+= Test 2 ===================================================
+$> ./user_exe 02
+$> diff -U 3 user_output_test02 test02.output
+
+Diff OK :D
+= Test 3 ===================================================
+$> ./user_exe 03
+$> diff -U 3 user_output_test03 test03.output
+
+Diff OK :D
+= Test 4 ===================================================
+$> ./user_exe 04
+$> diff -U 3 user_output_test04 test04.output
+
+Diff OK :D
+= Test 5 ===================================================
+$> ./user_exe 05
+$> diff -U 3 user_output_test05 test05.output
+
+Diff OK :D
+= Test 6 ===================================================
+$> ./user_exe 06
+$> diff -U 3 user_output_test06 test06.output
+
+Diff OK :D
+= Test 7 ===================================================
+$> ./user_exe 07
+$> diff -U 3 user_output_test07 test07.output
+
+Diff OK :D
+= Test 8 ===================================================
+$> ./user_exe 08
+$> diff -U 3 user_output_test08 test08.output
+
+Diff OK :D
+
+= ft_tolower ===================================================================
+$> norminette ft_tolower.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror /Users/junoh/Desktop/libft/intra-uuid-e4131d17-ad46-4ae5-a522-4ef6a54ca3de-3873067/Libftest/tests/Part1_functions/ft_tolower/main.c -L/Users/junoh/Desktop/libft/intra-uuid-e4131d17-ad46-4ae5-a522-4ef6a54ca3de-3873067/Libftest/tmp_tests_dir -lft -I/Users/junoh/Desktop/libft/intra-uuid-e4131d17-ad46-4ae5-a522-4ef6a54ca3de-3873067/Libftest/tmp_tests_dir
+
+= Test 1 ===================================================
+$> ./user_exe 01
+$> diff -U 3 user_output_test01 test01.output
+
+Diff OK :D
+= Test 2 ===================================================
+$> ./user_exe 02
+$> diff -U 3 user_output_test02 test02.output
+
+Diff OK :D
+= Test 3 ===================================================
+$> ./user_exe 03
+$> diff -U 3 user_output_test03 test03.output
+
+Diff OK :D
+= Test 4 ===================================================
+$> ./user_exe 04
+$> diff -U 3 user_output_test04 test04.output
+
+Diff OK :D
+= Test 5 ===================================================
+$> ./user_exe 05
+$> diff -U 3 user_output_test05 test05.output
+
+Diff OK :D
+= Test 6 ===================================================
+$> ./user_exe 06
+$> diff -U 3 user_output_test06 test06.output
+
+Diff OK :D
+= Test 7 ===================================================
+$> ./user_exe 07
+$> diff -U 3 user_output_test07 test07.output
+
+Diff OK :D
+
+= ft_toupper ===================================================================
+$> norminette ft_toupper.c | grep -E '(Error|Warning)'
+$> clang -Wextra -Wall -Werror /Users/junoh/Desktop/libft/intra-uuid-e4131d17-ad46-4ae5-a522-4ef6a54ca3de-3873067/Libftest/tests/Part1_functions/ft_toupper/main.c -L/Users/junoh/Desktop/libft/intra-uuid-e4131d17-ad46-4ae5-a522-4ef6a54ca3de-3873067/Libftest/tmp_tests_dir -lft -I/Users/junoh/Desktop/libft/intra-uuid-e4131d17-ad46-4ae5-a522-4ef6a54ca3de-3873067/Libftest/tmp_tests_dir
+
+= Test 1 ===================================================
+$> ./user_exe 01
+$> diff -U 3 user_output_test01 test01.output
+
+Diff OK :D
+= Test 2 ===================================================
+$> ./user_exe 02
+$> diff -U 3 user_output_test02 test02.output
+
+Diff OK :D
+= Test 3 ===================================================
+$> ./user_exe 03
+$> diff -U 3 user_output_test03 test03.output
+
+Diff OK :D
+= Test 4 ===================================================
+$> ./user_exe 04
+$> diff -U 3 user_output_test04 test04.output
+
+Diff OK :D
+= Test 5 ===================================================
+$> ./user_exe 05
+$> diff -U 3 user_output_test05 test05.output
+
+Diff OK :D
+= Test 6 ===================================================
+$> ./user_exe 06
+$> diff -U 3 user_output_test06 test06.output
+
+Diff OK :D
+= Test 7 ===================================================
+$> ./user_exe 07
+$> diff -U 3 user_output_test07 test07.output
+
+Diff OK :D
