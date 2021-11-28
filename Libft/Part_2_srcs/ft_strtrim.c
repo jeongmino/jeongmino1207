@@ -6,15 +6,15 @@
 /*   By: junoh <junoh@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/27 14:10:41 by junoh             #+#    #+#             */
-/*   Updated: 2021/11/27 14:57:19 by junoh            ###   ########.fr       */
+/*   Updated: 2021/11/28 15:00:20 by junoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_match(char const s1,char const *set)
+int	ft_match(char const s1, char const *set)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i < ft_strlen(set))
@@ -30,7 +30,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*str;
 	char	*buf;
-	int 	len;
+	int		len;
 	int		i;
 
 	str = (char *)malloc(sizeof(char) * (ft_strlen(s1) + 1));
