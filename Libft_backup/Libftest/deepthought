@@ -1,0 +1,147 @@
+= Host-specific information ====================================================
+$> hostname; uname -msr
+ojeongmin-ui-MacBookAir.local
+Darwin 20.6.0 arm64
+$> date
+2021년 11월 30일 화요일 19시 04분 35초 KST
+$> gcc --version
+Apple clang version 12.0.5 (clang-1205.0.22.11)
+Target: arm64-apple-darwin20.6.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+$> clang --version
+Apple clang version 12.0.5 (clang-1205.0.22.11)
+Target: arm64-apple-darwin20.6.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+
+= libft.h=======================================================================
+$> norminette libft.h | grep -E '(Error|Warning)'
+/Users/ojeongmin/Desktop/42_seoul/jeongmino1207/Libft/Libftest/tmp_tests_dir/libft.h: Error!
+Error: INVALID_HEADER       (line:   1, col:   1):	Missing or invalid 42 header
+Error: MISALIGNED_FUNC_DECL (line:   9, col:   9):	Misaligned function declaration
+Error: MISALIGNED_FUNC_DECL (line:  25, col:  10):	Misaligned function declaration
+Error: MISALIGNED_FUNC_DECL (line:  29, col:  10):	Misaligned function declaration
+Error: MISALIGNED_FUNC_DECL (line:  31, col:  10):	Misaligned function declaration
+Error: MISALIGNED_FUNC_DECL (line:  33, col:  10):	Misaligned function declaration
+Error: MISALIGNED_FUNC_DECL (line:  35, col:  10):	Misaligned function declaration
+Error: MISALIGNED_FUNC_DECL (line:  37, col:   9):	Misaligned function declaration
+Error: MISALIGNED_FUNC_DECL (line:  39, col:   9):	Misaligned function declaration
+Error: MISALIGNED_FUNC_DECL (line:  45, col:  10):	Misaligned function declaration
+Error: MISALIGNED_FUNC_DECL (line:  47, col:  10):	Misaligned function declaration
+Error: MISALIGNED_FUNC_DECL (line:  49, col:  10):	Misaligned function declaration
+Error: MISALIGNED_FUNC_DECL (line:  51, col:  10):	Misaligned function declaration
+Error: MISALIGNED_FUNC_DECL (line:  53, col:  10):	Misaligned function declaration
+Error: MISALIGNED_FUNC_DECL (line:  55, col:  10):	Misaligned function declaration
+Error: MISALIGNED_FUNC_DECL (line:  57, col:  10):	Misaligned function declaration
+Error: MISALIGNED_FUNC_DECL (line:  59, col:  11):	Misaligned function declaration
+Error: MISALIGNED_FUNC_DECL (line:  61, col:  10):	Misaligned function declaration
+Error: MISALIGNED_FUNC_DECL (line:  63, col:  10):	Misaligned function declaration
+Error: MISALIGNED_FUNC_DECL (line:  65, col:   9):	Misaligned function declaration
+Error: MISALIGNED_FUNC_DECL (line:  67, col:   9):	Misaligned function declaration
+Error: MISALIGNED_FUNC_DECL (line:  69, col:   9):	Misaligned function declaration
+Error: MISALIGNED_FUNC_DECL (line:  71, col:   9):	Misaligned function declaration
+Error: MISALIGNED_FUNC_DECL (line:  73, col:   9):	Misaligned function declaration
+Norme check failed
+
+= Compiling libft ==============================================================
+$> make re
+rm -f ./ft_atoi.o ./ft_bzero.o ./ft_calloc.o ./ft_isalnum.o ./ft_isalpha.o ./ft_isascii.o ./ft_isdigit.o ./ft_isprint.o ./ft_itoa.o ./ft_memchr.o ./ft_memcmp.o ./ft_memcpy.o ./ft_memmove.o ./ft_memset.o ./ft_putchar_fd.o ./ft_putendl_fd.o ./ft_putnbr_fd.o ./ft_putstr_fd.o ./ft_split.o ./ft_strchr.o ./ft_strdup.o ./ft_striteri.o ./ft_strjoin.o ./ft_strlcat.o ./ft_strlcpy.o ./ft_strlen.o ./ft_strmapi.o ./ft_strncmp.o ./ft_strnstr.o ./ft_strrchr.o ./ft_strtrim.o ./ft_substr.o ./ft_tolower.o ./ft_toupper.o ./main.o
+rm -f libft.a
+gcc -Wall -Wextra -Werror -c ft_atoi.c -o ft_atoi.o -I ./
+gcc -Wall -Wextra -Werror -c ft_bzero.c -o ft_bzero.o -I ./
+gcc -Wall -Wextra -Werror -c ft_calloc.c -o ft_calloc.o -I ./
+gcc -Wall -Wextra -Werror -c ft_isalnum.c -o ft_isalnum.o -I ./
+gcc -Wall -Wextra -Werror -c ft_isalpha.c -o ft_isalpha.o -I ./
+gcc -Wall -Wextra -Werror -c ft_isascii.c -o ft_isascii.o -I ./
+gcc -Wall -Wextra -Werror -c ft_isdigit.c -o ft_isdigit.o -I ./
+gcc -Wall -Wextra -Werror -c ft_isprint.c -o ft_isprint.o -I ./
+gcc -Wall -Wextra -Werror -c ft_itoa.c -o ft_itoa.o -I ./
+gcc -Wall -Wextra -Werror -c ft_memchr.c -o ft_memchr.o -I ./
+gcc -Wall -Wextra -Werror -c ft_memcmp.c -o ft_memcmp.o -I ./
+gcc -Wall -Wextra -Werror -c ft_memcpy.c -o ft_memcpy.o -I ./
+gcc -Wall -Wextra -Werror -c ft_memmove.c -o ft_memmove.o -I ./
+gcc -Wall -Wextra -Werror -c ft_memset.c -o ft_memset.o -I ./
+gcc -Wall -Wextra -Werror -c ft_putchar_fd.c -o ft_putchar_fd.o -I ./
+gcc -Wall -Wextra -Werror -c ft_putendl_fd.c -o ft_putendl_fd.o -I ./
+gcc -Wall -Wextra -Werror -c ft_putnbr_fd.c -o ft_putnbr_fd.o -I ./
+gcc -Wall -Wextra -Werror -c ft_putstr_fd.c -o ft_putstr_fd.o -I ./
+gcc -Wall -Wextra -Werror -c ft_split.c -o ft_split.o -I ./
+gcc -Wall -Wextra -Werror -c ft_strchr.c -o ft_strchr.o -I ./
+gcc -Wall -Wextra -Werror -c ft_strdup.c -o ft_strdup.o -I ./
+gcc -Wall -Wextra -Werror -c ft_striteri.c -o ft_striteri.o -I ./
+gcc -Wall -Wextra -Werror -c ft_strjoin.c -o ft_strjoin.o -I ./
+gcc -Wall -Wextra -Werror -c ft_strlcat.c -o ft_strlcat.o -I ./
+gcc -Wall -Wextra -Werror -c ft_strlcpy.c -o ft_strlcpy.o -I ./
+gcc -Wall -Wextra -Werror -c ft_strlen.c -o ft_strlen.o -I ./
+gcc -Wall -Wextra -Werror -c ft_strmapi.c -o ft_strmapi.o -I ./
+gcc -Wall -Wextra -Werror -c ft_strncmp.c -o ft_strncmp.o -I ./
+gcc -Wall -Wextra -Werror -c ft_strnstr.c -o ft_strnstr.o -I ./
+gcc -Wall -Wextra -Werror -c ft_strrchr.c -o ft_strrchr.o -I ./
+gcc -Wall -Wextra -Werror -c ft_strtrim.c -o ft_strtrim.o -I ./
+gcc -Wall -Wextra -Werror -c ft_substr.c -o ft_substr.o -I ./
+gcc -Wall -Wextra -Werror -c ft_tolower.c -o ft_tolower.o -I ./
+gcc -Wall -Wextra -Werror -c ft_toupper.c -o ft_toupper.o -I ./
+gcc -Wall -Wextra -Werror -c main.c -o main.o -I ./
+main.c:30:31: error: unknown type name 't_list'
+static void                     ft_print_result(t_list *elem)
+                                                ^
+main.c:47:8: error: unknown type name 't_list'
+static t_list           *get_lst_new_elem(void *content)
+       ^
+main.c:49:2: error: use of undeclared identifier 't_list'
+        t_list  *elem;
+        ^
+main.c:49:10: error: use of undeclared identifier 'elem'; did you mean 'else'?
+        t_list  *elem;
+                 ^~~~
+                 else
+main.c:49:10: error: expected expression
+main.c:51:2: error: use of undeclared identifier 'elem'
+        elem = (t_list *)malloc(sizeof(t_list));
+        ^
+main.c:51:18: error: expected expression
+        elem = (t_list *)malloc(sizeof(t_list));
+                        ^
+main.c:51:10: error: use of undeclared identifier 't_list'
+        elem = (t_list *)malloc(sizeof(t_list));
+                ^
+main.c:52:7: error: use of undeclared identifier 'elem'
+        if (!elem)
+             ^
+main.c:54:2: error: use of undeclared identifier 'elem'
+        elem->content = content;
+        ^
+main.c:55:2: error: use of undeclared identifier 'elem'
+        elem->next = NULL;
+        ^
+main.c:56:10: error: use of undeclared identifier 'elem'; did you mean 'enum'?
+        return (elem);
+                ^~~~
+                enum
+main.c:56:9: error: returning '<overloaded function type>' from a function with incompatible result type 'int *'
+        return (elem);
+               ^~~~~~
+main.c:69:42: error: unknown type name 't_list'
+static void                     free_memory_lst_and_return(t_list *elem)
+                                                           ^
+main.c:71:2: error: use of undeclared identifier 't_list'
+        t_list          *tmp;
+        ^
+main.c:71:11: error: use of undeclared identifier 'tmp'
+        t_list          *tmp;
+                         ^
+main.c:75:3: error: use of undeclared identifier 'tmp'
+                tmp = elem->next;
+                ^
+main.c:77:10: error: use of undeclared identifier 'tmp'
+                elem = tmp;
+                       ^
+main.c:104:8: error: unknown type name 't_list'
+static t_list           *get_elem_lst(t_list *begin, char **tab, int i)
+       ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+make: *** [main.o] Error 1
+
+$> ls -la libft.a

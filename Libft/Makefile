@@ -4,9 +4,9 @@ CC = gcc
 
 CFLAGS = -Wall -Wextra -Werror
 
-HEADER = includes/
+HEADER = ./
 
-SRCS = $(wildcard ./srcs/*.c)
+SRCS = $(wildcard *.c)
 
 OBJS = $(SRCS:.c=.o)
 
