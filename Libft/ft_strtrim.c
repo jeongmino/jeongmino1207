@@ -1,54 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_v2_strtrim.c                                    :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: junoh <junoh@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/27 14:10:41 by junoh             #+#    #+#             */
-/*   Updated: 2021/11/28 15:00:20 by junoh            ###   ########.fr       */
+/*   Created: 2021/12/02 18:55:13 by junoh             #+#    #+#             */
+/*   Updated: 2021/12/02 19:27:51 by junoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_match(char const s1, char const *set)
+int	ft_setcheck(char c, char const *set)
 {
 	int	i;
 
 	i = 0;
-	while (i < ft_strlen(set))
+	while (set[i])
 	{
-		if (s1 == set[i])
-			return (0);
-		i++;
+		if (set[i++] == c)
+			return (1);
 	}
-	return (1);
+	return (0);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*str;
-	char	*buf;
-	int		len;
+	int		start;
+	int		end;
 	int		i;
 
-	str = (char *)malloc(sizeof(char) * (ft_strlen(s1) + 1));
+	start = 0;
+	if (s1 == 0 || set == 0)
+		return (NULL);
+	end = ft_strlen(s1);
+	while (s1[start] && ft_setcheck(s1[start], set))
+		start++;
+	while (end > start && ft_setcheck(s1[end - 1], set))
+		end--;
+	str = (char *)malloc(sizeof(char) * (end - start + 1));
 	if (str == NULL)
-		return (0);
-	buf = str;
-	len = ft_strlen(set);
+		return (NULL);
 	i = 0;
-	while (s1[i])
-	{
-		if (i < len || i > ft_strlen(s1) - len)
-		{
-			if (ft_match(*(s1 + i), set))
-				*str++ = *(s1 + i);
-		}
-		else
-			*str++ = *(s1 + i);
-		i++;
-	}
-	return (buf);
+	while (start < end)
+		str[i++] = s1[start++];
+	str[i] = '\0';
+	return (str);
 }

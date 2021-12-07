@@ -6,7 +6,7 @@
 /*   By: junoh <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/28 18:21:43 by junoh             #+#    #+#             */
-/*   Updated: 2021/11/30 19:48:23 by junoh            ###   ########.fr       */
+/*   Updated: 2021/12/04 16:33:15 by junoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	char	*str;
-	size_t	i;
+	int		i;
 
 	if (!s || !f)
 		return (NULL);
@@ -23,11 +23,10 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	if (!str)
 		return (NULL);
 	i = 0;
-	while (*s)
+	while (i < ft_strlen(s))
 	{
 		str[i] = f(i, s[i]);
 		i++;
-		s++;
 	}
 	str[i] = '\0';
 	return (str);

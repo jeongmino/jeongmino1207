@@ -6,7 +6,7 @@
 /*   By: junoh <junoh@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/27 15:01:08 by junoh             #+#    #+#             */
-/*   Updated: 2021/11/30 19:26:36 by junoh            ###   ########.fr       */
+/*   Updated: 2021/12/02 16:55:30 by junoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,13 @@ static	int	ft_count(char const *s, char c)
 	int	cnt;
 
 	cnt = 0;
-	if (*s != c)
+	if (*s != c && *s != '\0')
 		cnt++;
 	while (*s)
 	{
-		if (*s == c)
-		{
-			if (*(s + 1) != c)
-				cnt++;
-		}
+		if ((*s == c) && (*(s + 1) != c) && \
+			(*(s + 1) != '\0'))
+			cnt++;
 		s++;
 	}
 	return (cnt);
@@ -79,16 +77,19 @@ static	char	**ft_split2(char **strs, char const *s, char c, int cnt)
 		ft_word_make(strs[stridx], buf, len);
 		stridx++;
 	}
+	strs[stridx] = 0;
 	return (strs);
 }
 
 char	**ft_split(char const *s, char c)
 {
 	char	**strs;
+	int		wc;
 
-	strs = (char **)malloc(sizeof(char *) * (ft_count(s, c)));
+	wc = ft_count(s, c);
+	strs = (char **)malloc(sizeof(char *) * (wc + 1));
 	if (strs == NULL)
 		return (NULL);
-	strs = ft_split2(strs, s, c, ft_count(s, c));
+	strs = ft_split2(strs, s, c, wc);
 	return (strs);
 }

@@ -6,7 +6,7 @@
 /*   By: junoh <junoh@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/12 19:58:36 by junoh             #+#    #+#             */
-/*   Updated: 2021/11/25 14:13:53 by junoh            ###   ########.fr       */
+/*   Updated: 2021/12/05 21:18:38 by junoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	if (dstsize == 0)
 		return (src_len);
 	i = 0;
-	while ((dst_len + i < dstsize - 1) && src[i])
+	while ((dst_len + i + 1 < dstsize) && src[i])
 	{
 		dst[dst_len + i] = src[i];
 		i++;

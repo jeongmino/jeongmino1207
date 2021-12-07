@@ -6,12 +6,14 @@
 /*   By: junoh <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 13:41:08 by junoh             #+#    #+#             */
-/*   Updated: 2021/11/25 13:59:59 by junoh            ###   ########.fr       */
+/*   Updated: 2021/12/03 16:04:14 by ojeongmin        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strchr(const char *s, int c)
 {
+	if (c >= 126)
+		return ((char *)s);
 	while (*s)
 	{
 		if (*s == c)
