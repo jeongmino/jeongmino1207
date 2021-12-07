@@ -6,13 +6,13 @@
 /*   By: jtoty <jtoty@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/28 12:06:12 by jtoty             #+#    #+#             */
-/*   Updated: 2017/03/09 15:44:51 by jtoty            ###   ########.fr       */
+/*   Updated: 2021/12/07 16:22:36 by junoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <unistd.h>
-#include "../../../libft.h"
+#include "libft.h"
 #include <string.h>
 
 void	ft_print_result(int n)
@@ -80,7 +80,7 @@ int		main(int argc, const char *argv[])
 	else if (arg == 7)
 	{
 		memset(dest, 'r', 15);
-		ft_print_result(ft_strlcat(dest, "lorem ipsum dolor sit amet", 5));
+		ft_print_result(strlcat(dest, "lorem ipsum dolor sit amet", 5));
 		write(1, "\n", 1);
 		write(1, dest, 15);
 	}
