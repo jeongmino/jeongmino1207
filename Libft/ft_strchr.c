@@ -6,21 +6,19 @@
 /*   By: junoh <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 13:41:08 by junoh             #+#    #+#             */
-/*   Updated: 2021/12/03 16:04:14 by ojeongmin        ###   ########.fr       */
+/*   Updated: 2021/12/08 14:40:40 by junoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strchr(const char *s, int c)
 {
-	if (c >= 126)
-		return ((char *)s);
 	while (*s)
 	{
-		if (*s == c)
+		if (*s == (unsigned char)c)
 			return ((char *)s);
 		s++;
 	}
-	if (*s == c)
+	if (*s == (unsigned char)c)
 		return ((char *)s);
 	else
 		return (0);

@@ -6,7 +6,7 @@
 /*   By: junoh <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/28 19:49:10 by junoh             #+#    #+#             */
-/*   Updated: 2021/11/28 20:24:09 by junoh            ###   ########.fr       */
+/*   Updated: 2021/12/08 14:45:37 by junoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_putendl_fd(char *s, int fd)
 {
+	if (s == NULL)
+		return ;
 	ft_putstr_fd(s, fd);
 	write(fd, "\n", 1);
 }

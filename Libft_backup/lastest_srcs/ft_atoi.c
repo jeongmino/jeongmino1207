@@ -1,30 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_v2_atoi.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: junoh <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/08 16:33:02 by junoh             #+#    #+#             */
-/*   Updated: 2021/12/08 17:10:32 by junoh            ###   ########.fr       */
+/*   Created: 2021/11/19 13:38:06 by junoh             #+#    #+#             */
+/*   Updated: 2021/12/08 16:55:04 by junoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static int	check(const char *str)
+{
+	int		sign;
+	int		cnt;
+
+	while ((*str >= '\t' && *str <= '\r') || *str == ' ')
+		str++;
+	cnt = 0;
+	sign = 1;
+	while (*str == '-' || *str == '+')
+	{
+		if (*str++ == '-')
+			sign *= -1;
+		cnt++;
+	}
+	if (cnt > 1)
+		sign = 2;
+	return (sign);
+}
 
 int	ft_atoi(const char *str)
 {
 	int		sign;
 	size_t	sum;
 
-	while ((*str >= '\t' && *str <= '\r') || *str == ' ')
-		str++;
-	sign = 1;
-	if (*str == '-' || *str == '+')
-	{
-		if (*str++ == '-')
-			sign = -1;
-	}
+	sign = check(str);
+	if (sign == 2)
+		return (0);
 	sum = 0;
 	while (*str >= '0' && *str <= '9')
 	{

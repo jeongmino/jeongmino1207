@@ -6,7 +6,7 @@
 /*   By: junoh <junoh@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/27 15:01:08 by junoh             #+#    #+#             */
-/*   Updated: 2021/12/07 18:40:36 by junoh            ###   ########.fr       */
+/*   Updated: 2021/12/08 14:47:26 by junoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,8 @@ char	**ft_split(char const *s, char c)
 	char	**strs;
 	int		wc;
 
+	if (s == NULL)
+		return (NULL);
 	wc = ft_count(s, c);
 	strs = (char **)malloc(sizeof(char *) * (wc + 1));
 	if (strs == NULL)

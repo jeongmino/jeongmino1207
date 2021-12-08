@@ -6,7 +6,7 @@
 /*   By: junoh <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/28 19:47:32 by junoh             #+#    #+#             */
-/*   Updated: 2021/11/28 19:48:59 by junoh            ###   ########.fr       */
+/*   Updated: 2021/12/08 14:44:50 by junoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 void	ft_putstr_fd(char *s, int fd)
 {
 	if (fd < 0)
+		return ;
+	if (s == NULL)
 		return ;
 	while (*s)
 		ft_putchar_fd(*s++, fd);

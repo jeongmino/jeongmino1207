@@ -6,7 +6,7 @@
 /*   By: junoh <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 16:08:58 by junoh             #+#    #+#             */
-/*   Updated: 2021/12/03 16:37:01 by junoh            ###   ########.fr       */
+/*   Updated: 2021/12/08 14:40:28 by junoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,18 @@
 char	*ft_strrchr(const char *s, int c)
 {
 	char	*buffer;
+	char	tmp;
 
-	if (c >= 126)
-		return ((char *)s);
+	tmp = (char)c;
 	buffer = 0;
-	if (c == 0)
+	if (tmp == 0)
 	{
 		buffer = (char *)(s + ft_strlen(s));
 		return (buffer);
 	}
 	while (*s)
 	{
-		if (*s == c)
+		if (*s == tmp)
 			buffer = (char *)s;
 		s++;
 	}
