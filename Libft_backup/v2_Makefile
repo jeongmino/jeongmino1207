@@ -1,12 +1,12 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
+#    v2_Makefile                                        :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: junoh <junoh@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/08 22:22:47 by junoh             #+#    #+#              #
-#    Updated: 2021/12/09 00:12:21 by junoh            ###   ########.fr        #
+#    Updated: 2021/12/09 00:09:28 by junoh            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,7 @@ RM = rm -f
 FILES = ft_memset \
 		ft_bzero \
 		ft_memcpy \
+		ft_memccpy \
 		ft_memmove \
 		ft_memchr \
 		ft_memcmp \
@@ -51,6 +52,9 @@ FILES = ft_memset \
 		ft_putstr_fd \
 		ft_putendl_fd \
 		ft_putnbr_fd \
+		ft_strtok \
+		ft_strcmp \
+		get_next_line \
 
 FILES_B = 	ft_lstnew \
 	  		ft_lstadd_front \
@@ -63,12 +67,12 @@ FILES_B = 	ft_lstnew \
 	  		ft_lstmap
 
 SRCS_DIR = ./
-SRCS = $(addprefix $(SRCS_DIR), $(addsuffix .c, $(FILES)))
-SRCS_B = $(addprefix $(SRCS_DIR), $(addsuffix .c, $(FILES_B)))
+SRCS = $(addprefix $(SRCS_DIR), $(addsuffix .c, $(FILES))) // +(./)+{(ft_functions) + (.c)}
+SRCS_B = $(addprefix $(SRCS_DIR), $(addsuffix .c, $(FILES_B))) // same way
 
 OBJS_DIR = ./
-OBJS = $(addprefix $(OBJS_DIR), $(addsuffix .o, $(FILES)))
-OBJS_B = $(addprefix $(OBJS_DIR), $(addsuffix .o, $(FILES_B)))
+OBJS = $(addprefix $(OBJS_DIR), $(addsuffix .o, $(FILES))) // same way by using (.o) instead of (.c)
+OBJS_B = $(addprefix $(OBJS_DIR), $(addsuffix .o, $(FILES_B))) // same way by using (.o) instead of (.c)
 
 
 .c.o: $(SRCS)
