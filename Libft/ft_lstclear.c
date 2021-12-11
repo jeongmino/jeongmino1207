@@ -6,7 +6,7 @@
 /*   By: junoh <junoh@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 16:48:44 by junoh             #+#    #+#             */
-/*   Updated: 2021/12/10 16:58:59 by junoh            ###   ########.fr       */
+/*   Updated: 2021/12/11 21:56:17 by junoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,17 @@
 
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	int	i;
+	t_list	*node;
+	t_list	*ptr;
 
-	if (lst == NULL || del == NULL)
-		return ;
-	i = 0;
-	while (lst[i]->next != NULL)
-		ft_lstdelone(lst[i++], del);
+	ptr = *lst;
+	node = *lst;
+	while (ptr != NULL)
+	{
+		ptr = ptr->next;
+		ft_lstdelone(node, del);
+		node = ptr;
+	}
 	*lst = NULL;
 	return ;
 }

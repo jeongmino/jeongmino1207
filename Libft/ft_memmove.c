@@ -6,7 +6,7 @@
 /*   By: junoh <junoh@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/12 17:23:15 by junoh             #+#    #+#             */
-/*   Updated: 2021/11/25 13:43:50 by junoh            ###   ########.fr       */
+/*   Updated: 2021/12/11 20:18:36 by junoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,12 @@
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	unsigned char		*ptr_dest;
-	const unsigned char	*ptr_src;
+	unsigned char		*ptr_src;
 
 	if (dest == src || n == 0)
 		return (dest);
-	ptr_dest = dest;
-	ptr_src = src;
+	ptr_dest = (unsigned char *)dest;
+	ptr_src = (unsigned char *)src;
 	if (dest < src)
 	{
 		while (n-- > 0)

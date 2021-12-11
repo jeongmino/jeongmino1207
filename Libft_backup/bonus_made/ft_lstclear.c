@@ -1,31 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: junoh <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: junoh <junoh@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/19 11:48:08 by junoh             #+#    #+#             */
-/*   Updated: 2021/12/11 19:26:40 by junoh            ###   ########.fr       */
+/*   Created: 2021/12/10 16:48:44 by junoh             #+#    #+#             */
+/*   Updated: 2021/12/11 16:10:39 by junoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	unsigned char	*tmp1;
-	unsigned char	*tmp2;
-	size_t			i;
+	int	i;
 
-	tmp1 = (unsigned char *)s1;
-	tmp2 = (unsigned char *)s2;
+	if (lst == NULL || del == NULL)
+		return ;
 	i = 0;
-	while (i < n)
-	{
-		if (tmp1[i] != tmp2[i])
-			return (tmp1[i] - tmp2[i]);
-		i++;
-	}
-	return (0);
+	while (lst[i]->next != NULL)
+		ft_lstdelone(lst[i++], del);
+	*lst = NULL;
+	return ;
 }

@@ -6,7 +6,7 @@
 /*   By: junoh <junoh@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 16:55:03 by junoh             #+#    #+#             */
-/*   Updated: 2021/12/07 18:12:46 by junoh            ###   ########.fr       */
+/*   Updated: 2021/12/11 21:22:04 by junoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	*ft_memset(void *b, int c, size_t len)
 {
 	unsigned char	*ptr;
 
-	ptr = b;
+	ptr = (unsigned char *)b;
 	while (len--)
 		*ptr++ = c;
 	return (b);
