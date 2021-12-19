@@ -6,7 +6,7 @@
 /*   By: junoh <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 13:41:08 by junoh             #+#    #+#             */
-/*   Updated: 2021/12/08 14:40:40 by junoh            ###   ########.fr       */
+/*   Updated: 2021/12/12 13:46:09 by junoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@ char	*ft_strchr(const char *s, int c)
 {
 	while (*s)
 	{
-		if (*s == (unsigned char)c)
+		if (*s == (char)c)
 			return ((char *)s);
 		s++;
 	}
-	if (*s == (unsigned char)c)
+	if (*s == (char)c)
 		return ((char *)s);
 	else
 		return (0);

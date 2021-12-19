@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 echo -e "\033[32;1m"NORM"\033[m"
 read $a
 norminette ./*.c ./*.h

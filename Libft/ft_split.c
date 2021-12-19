@@ -6,7 +6,7 @@
 /*   By: junoh <junoh@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/27 15:01:08 by junoh             #+#    #+#             */
-/*   Updated: 2021/12/08 14:47:26 by junoh            ###   ########.fr       */
+/*   Updated: 2021/12/12 14:05:16 by junoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ static	char	**ft_split2(char **strs, char const *s, char c, int cnt)
 		ft_word_make(strs[stridx], buf, len);
 		stridx++;
 	}
-	strs[stridx] = 0;
+	strs[stridx] = NULL;
 	return (strs);
 }
 

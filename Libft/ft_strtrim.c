@@ -6,7 +6,7 @@
 /*   By: junoh <junoh@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/02 18:55:13 by junoh             #+#    #+#             */
-/*   Updated: 2021/12/02 19:27:51 by junoh            ###   ########.fr       */
+/*   Updated: 2021/12/12 14:00:02 by junoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		end;
 	int		i;
 
-	start = 0;
 	if (s1 == 0 || set == 0)
 		return (NULL);
+	start = 0;
 	end = ft_strlen(s1);
 	while (s1[start] && ft_setcheck(s1[start], set))
 		start++;

@@ -6,7 +6,7 @@
 #    By: junoh <junoh@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/08 22:22:47 by junoh             #+#    #+#              #
-#    Updated: 2021/12/09 00:12:21 by junoh            ###   ########.fr        #
+#    Updated: 2021/12/12 13:29:39 by junoh            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,6 +51,7 @@ FILES = ft_memset \
 		ft_putstr_fd \
 		ft_putendl_fd \
 		ft_putnbr_fd \
+		ft_striteri
 
 FILES_B = 	ft_lstnew \
 	  		ft_lstadd_front \

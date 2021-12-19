@@ -6,7 +6,7 @@
 /*   By: junoh <junoh@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/09 00:20:13 by junoh             #+#    #+#             */
-/*   Updated: 2021/12/09 00:27:10 by junoh            ###   ########.fr       */
+/*   Updated: 2021/12/12 14:21:07 by junoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,11 @@
 # include <unistd.h>
 # include <stdlib.h>
 
-typedef struct	s_list
+typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
 }				t_list;
-
 int		ft_atoi(const char *str);
 
 void	ft_bzero(void *s, size_t n);
