@@ -6,7 +6,7 @@
 #    By: junoh <junoh@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/08 22:22:47 by junoh             #+#    #+#              #
-#    Updated: 2021/12/12 13:29:39 by junoh            ###   ########.fr        #
+#    Updated: 2021/12/21 16:13:52 by junoh            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -63,6 +63,7 @@ FILES_B = 	ft_lstnew \
 	  		ft_lstiter \
 	  		ft_lstmap
 
+
 SRCS_DIR = ./
 SRCS = $(addprefix $(SRCS_DIR), $(addsuffix .c, $(FILES)))
 SRCS_B = $(addprefix $(SRCS_DIR), $(addsuffix .c, $(FILES_B)))
@@ -71,15 +72,20 @@ OBJS_DIR = ./
 OBJS = $(addprefix $(OBJS_DIR), $(addsuffix .o, $(FILES)))
 OBJS_B = $(addprefix $(OBJS_DIR), $(addsuffix .o, $(FILES_B)))
 
+ifdef WITH_BONUS
+	OBJS_FILES = $(OBJS) $(OBJS_B)
+else
+	OBJS_FILES = $(OBJS)
+endif
 
 .c.o: $(SRCS)
 	$(CC) $(CFLAGS) -c -o $@ $<
 
-$(NAME): $(OBJS)
+$(NAME): $(OBJS_FILES)
 	$(AR) $@ $^
 
-bonus: $(OBJS_B)
-	$(AR) $(NAME) $^
+bonus:
+	@make WITH_BONUS=1 all
 
 all: $(NAME)
 

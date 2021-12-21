@@ -6,7 +6,7 @@
 /*   By: junoh <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/19 17:27:24 by junoh             #+#    #+#             */
-/*   Updated: 2021/12/20 19:05:18 by junoh            ###   ########.fr       */
+/*   Updated: 2021/12/20 23:04:14 by junoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,43 +16,34 @@ char	*get_next_line(int fd)
 {
 	static t_list	*head;
 	char			*buf[BUFFER_SIZE]; // nullstring trminate
+	char			*line;
 	int				read_size;
 	// add more variables
-	
+
 	if (fd < 0 || BUFFER_SIZE < 0)
 		return (0);
-	read_size = 0;
-	while (read_size % BUFFER_SIZE == 0 || read_size == -1)
-	{
-		read_size = ft_find_and_read(fd, buf, BUFFER_SIZE);
+	line = ft_find_and_read(fd, buf, BUFFER_SIZE);
+
 }
 
-int	ft_find_and_read(int fd, char *buf, int BUFFER_SIZE)
+char	*ft_find_and_read(int fd, char *buf, int BUFFER_SIZE)
 {
-	int		size;
 	char	*tmp;
+	int		idx;
 
 	if(read(fd, buf, BUFFER_SIZE) <= 0) // if function find EOF or ERROR 
-		return (-1);
-	if (ft_strichr(s, '\n') + 1 == BUFFER_SIZE)
-		return (
-}
-
-int	ft_strichr(const char *s, char c)
-{
-	int		index;
-
-	index = 0;
-	while (*s)
+		return (ft_strdup(""));
+	while (idx != BUFFER_SIZE)
 	{
-		if (*s == c)
-			return (index);
-		index++;
-		s++;
+		idx = 0;
+		while (idx < BUFFER_SIZE && buf[idx] != '\n')
+			idx++;
+		tmp = ft_copy_and_paste(tmp, buf, idx, BUFFER_SIZE);
 	}
-	if (c == 0)
-		return (index);
 }
 
-		
+char	*ft_copy_and_paste(char *dst, char *src, int idx, int BUFFER_SIZE)
+{
+	char	*str;
 
+	str = (char *)malloc(sizeof(char) * ft_strlen(dst)

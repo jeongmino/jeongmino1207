@@ -1,12 +1,12 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    v2_Makefile                                        :+:      :+:    :+:    #
+#    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: junoh <junoh@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/08 22:22:47 by junoh             #+#    #+#              #
-#    Updated: 2021/12/21 16:30:12 by junoh            ###   ########.fr        #
+#    Updated: 2021/12/21 16:32:02 by junoh            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,6 @@ RM = rm -f
 FILES = ft_memset \
 		ft_bzero \
 		ft_memcpy \
-		ft_memccpy \
 		ft_memmove \
 		ft_memchr \
 		ft_memcmp \
@@ -52,9 +51,6 @@ FILES = ft_memset \
 		ft_putstr_fd \
 		ft_putendl_fd \
 		ft_putnbr_fd \
-		ft_strtok \
-		ft_strcmp \
-		get_next_line \
 
 FILES_B = 	ft_lstnew \
 	  		ft_lstadd_front \

@@ -6,7 +6,7 @@
 /*   By: junoh <junoh@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/27 15:01:08 by junoh             #+#    #+#             */
-/*   Updated: 2021/12/12 14:05:16 by junoh            ###   ########.fr       */
+/*   Updated: 2021/12/21 16:07:40 by junoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static	void	*ft_strfree(char **strs, int stridx)
 	int	i;
 
 	i = 0;
-	while (i <= stridx)
+	while (i < stridx)
 		free(strs[i++]);
 	free(strs);
 	return (NULL);
