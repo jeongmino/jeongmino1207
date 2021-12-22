@@ -1,21 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_v2_atoi.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: junoh <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/08 16:33:02 by junoh             #+#    #+#             */
-/*   Updated: 2021/12/08 17:10:32 by junoh            ###   ########.fr       */
+/*   Updated: 2021/12/21 17:23:46 by junoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <limits.h>
 
-int	ft_atoi(const char *str)
+static long	ft_strtol(const char *str)
 {
-	int		sign;
-	size_t	sum;
+	long	sign;
+	long	tmp;
+	long	sum;
 
 	while ((*str >= '\t' && *str <= '\r') || *str == ' ')
 		str++;
@@ -26,15 +28,21 @@ int	ft_atoi(const char *str)
 			sign = -1;
 	}
 	sum = 0;
+	tmp = 0;
 	while (*str >= '0' && *str <= '9')
 	{
-		sum = (sum * 10) + (*str - '0');
+		tmp = (sum * 10) + sign * (*str - '0');
+		if (sum > 0 && tmp < 0)
+			return (LONG_MAX);
+		if (sum < 0 && tmp > 0)
+			return (LONG_MIN);
+		sum = tmp;
 		str++;
 	}
-	if (sum > 9223372036854775807 && sign == 1)
-		return (-1);
-	else if (sum > 9223372036854775808UL && sign == -1)
-		return (0);
-	else
-		return ((int)(sum * sign));
+	return (sum);
+}
+
+int	ft_atoi(const char *str)
+{
+	return ((int)ft_strtol(str));
 }
