@@ -6,7 +6,7 @@
 /*   By: junoh <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/19 17:27:24 by junoh             #+#    #+#             */
-/*   Updated: 2021/12/20 23:04:14 by junoh            ###   ########.fr       */
+/*   Updated: 2021/12/27 13:17:03 by junoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ char	*ft_find_and_read(int fd, char *buf, int BUFFER_SIZE)
 	char	*tmp;
 	int		idx;
 
-	if(read(fd, buf, BUFFER_SIZE) <= 0) // if function find EOF or ERROR 
+	if(read(fd, buf, BUFFER_SIZE) <= 0) // if function find EOF or ERROR
 		return (ft_strdup(""));
 	while (idx != BUFFER_SIZE)
 	{

@@ -6,7 +6,7 @@
 /*   By: junoh <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 16:50:07 by junoh             #+#    #+#             */
-/*   Updated: 2021/12/11 21:49:39 by junoh            ###   ########.fr       */
+/*   Updated: 2022/01/07 17:17:29 by junoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*substr;
 	int		idx;
 
-	if (!s || !*s)
+	if (!s)
 		return (0);
 	if (start >= (unsigned int)ft_strlen(s))
 		return (ft_strdup(""));
